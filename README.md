@@ -4,15 +4,15 @@
 In this project, you'll be creating a frontend that graphically displays Pokémon information (similiar to a Pokédex). To fetch all the necessary information, you'll be working with the [PokeAPI](https://pokeapi.co/docs/v2#pokemon).
 
 ## Setting Up
-- Fork this repository, set the owner to BoG-Developer-Bootcamp-S26, and name it `project1-s26-yourname`
+- Fork this repository, set the owner to BoG-Developer-Bootcamp-Fall-26, and name it `project1-f26-yourname`
 - Clone the repository onto your local computer
 - Navigate to your new project folder and create your HTML, CSS, and JS files
 
 # Submission Instructions
 - Create a 0.5-3 minute video walkthrough of your project (include the video link in the README of your project repo)
   - You can just post it to Youtube or provide a Google Drive link or whatever works.
-- Push all your changes to the remote repository. Make sure that the owner is BoG-Developer-Bootcamp-S26 so that we can see the repository! (if you forgot to do this, you can alternatively message Nathan on Slack with the link to your repo)
-- **Due Date:** 2/24/26
+- Push all your changes to the remote repository. Make sure that the owner is BoG-Developer-Bootcamp-Fall-26 so that we can see the repository! (if you forgot to do this, you can alternatively message Pattakit on Slack with the link to your repo)
+- **Due Date:** 9/29/26
 
 ## Requirements
 - Must use HTML, CSS, and JS
