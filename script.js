@@ -21,38 +21,47 @@ const typeColors = {
     dark: "#705848",
     steel: "#B8B8D0",
     fairy: "#EE99AC"
-}
+};
 
 async function getPokemon() {
-    const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
-    );
+    try {
+        const response = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
+        );
 
-    const data = await response.json();
-    currentPokemon = data;
+        if (!response.ok) {
+            throw new Error("Pokemon not found.")
+        }
 
-    document.getElementById("pokemon-name").textContent = data.name;
+        const data = await response.json();
 
-    document.getElementById("pokemon-img").src = data.sprites.front_default;
+        currentPokemon = data;
 
-    const typesContainer = document.getElementById("pokemon-types");
+        document.getElementById("pokemon-name").textContent = data.name;
 
-    typesContainer.innerHTML = "";
+        document.getElementById("pokemon-img").src = data.sprites.front_default;
 
-    data.types.forEach(typeInfo => {
-        const type = document.createElement("span");
+        const typesContainer = document.getElementById("pokemon-types");
 
-        type.textContent = typeInfo.type.name;
+        typesContainer.innerHTML = "";
 
-        type.style.backgroundColor = typeColors[typeInfo.type.name];
+        data.types.forEach(typeInfo => {
+            const type = document.createElement("span");
 
-        typesContainer.appendChild(type);
-    });
+            type.textContent = typeInfo.type.name;
 
-    if (currentTab === "info") {
-        showInfo();
-    } else {
-        showMoves();
+            type.style.backgroundColor = typeColors[typeInfo.type.name];
+
+            typesContainer.appendChild(type);
+        });
+
+        if (currentTab === "info") {
+            showInfo();
+        } else {
+            showMoves();
+        }
+    } catch (error) {
+        console.error(error);
     }
 }
 
@@ -76,7 +85,7 @@ function showInfo() {
         <p>special-attack: ${currentPokemon.stats[3].base_stat}</p>
         <p>special-defense: ${currentPokemon.stats[4].base_stat}</p>
         <p>speed: ${currentPokemon.stats[5].base_stat}</p>
-    `
+    `;
 }
 
 function showMoves() {
@@ -95,8 +104,8 @@ function showMoves() {
 
         move.textContent = moveInfo.move.name;
 
-        statsPanel.appendChild(move)
-    })
+        statsPanel.appendChild(move);
+    });
 }
 
 document.getElementById("next-button").addEventListener("click", () => {

@@ -84,10 +84,6 @@ h1 {
     font-size: 28px;
 }
 
-.details-section {
-    width: 300px;
-}
-
 #panel-title {
     text-align: center;
     margin-top: 0;
@@ -130,12 +126,4 @@ h1 {
 #pokemon-types {
     display: flex;
     gap: 10px;
-}
-
-#pokemon-types span {
-    padding: 8px 16px;
-    border-radius: 5px;
-    background-color: gray;
-    color: black;
-    text-transform: lowercase;
 }
