@@ -23,10 +23,10 @@ h1 {
     width: 300px;
 }
 
-.image-container {
+.img-container {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    border: 2px solid black;
 
     display: flex;
     justify-content: center;
@@ -37,4 +37,65 @@ h1 {
     width: 250px;
     height: 250px;
     object-fit: contain;
+}
+
+#pokemon-name {
+    width: 300px;
+    height: 40px;
+    background-color: #e8e8e8;
+    border: 1px solid gray;
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.types-section {
+    margin-top: 25px;
+}
+
+#pokemon-types {
+    margin-top: 10px;
+}
+
+.arrow-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-section {
+    width: 300px;
+}
+
+#panel-title {
+    text-align: center;
+    margin-top: 0;
+}
+
+#stats-panel {
+    width: 280px;
+    height: 350px;
+    background-color: #e8e8e8;
+    margin-top: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tab-buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-buttons button {
+    width: 110px;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
 }
