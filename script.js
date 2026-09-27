@@ -1,4 +1,6 @@
 let pokemonId = 1;
+let currentTab = "info";
+let currentPokemon = null;
 
 const typeColors = {
     normal: "#A8A878",
@@ -27,6 +29,7 @@ async function getPokemon() {
     );
 
     const data = await response.json();
+    currentPokemon = data;
 
     document.getElementById("pokemon-name").textContent = data.name;
 
@@ -44,10 +47,57 @@ async function getPokemon() {
         type.style.backgroundColor = typeColors[typeInfo.type.name];
 
         typesContainer.appendChild(type);
-    })
+    });
+
+    if (currentTab === "info") {
+        showInfo();
+    } else {
+        showMoves();
+    }
 }
 
 getPokemon();
+
+function showInfo() {
+    currentTab = "info";
+    document.getElementById("info-button").classList.add("active");
+    document.getElementById("moves-button").classList.remove("active");
+
+    document.getElementById("panel-title").textContent = "Info";
+
+    const statsPanel = document.getElementById("stats-panel");
+
+    statsPanel.innerHTML = `
+        <p>height: ${currentPokemon.height / 10}m</p>
+        <p>weight: ${currentPokemon.weight / 10}kg</p>
+        <p>hp: ${currentPokemon.stats[0].base_stat}</p>
+        <p>attack: ${currentPokemon.stats[1].base_stat}</p>
+        <p>defense: ${currentPokemon.stats[2].base_stat}</p>
+        <p>special-attack: ${currentPokemon.stats[3].base_stat}</p>
+        <p>special-defense: ${currentPokemon.stats[4].base_stat}</p>
+        <p>speed: ${currentPokemon.stats[5].base_stat}</p>
+    `
+}
+
+function showMoves() {
+    currentTab = "moves";
+    document.getElementById("moves-button").classList.add("active");
+    document.getElementById("info-button").classList.remove("active");
+
+    document.getElementById("panel-title").textContent = "Moves";
+
+    const statsPanel = document.getElementById("stats-panel");
+
+    statsPanel.innerHTML = "";
+
+    currentPokemon.moves.forEach(moveInfo => {
+        const move = document.createElement("p");
+
+        move.textContent = moveInfo.move.name;
+
+        statsPanel.appendChild(move)
+    })
+}
 
 document.getElementById("next-button").addEventListener("click", () => {
     pokemonId++;
@@ -60,3 +110,6 @@ document.getElementById("previous-button").addEventListener("click", () => {
         getPokemon();
     }
 });
+
+document.getElementById("info-button").addEventListener("click", showInfo);
+document.getElementById("moves-button").addEventListener("click", showMoves);
