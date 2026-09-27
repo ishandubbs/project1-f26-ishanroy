@@ -33,7 +33,7 @@ h1 {
     align-items: center;
 }
 
-#pokemon-image {
+#pokemon-img {
     width: 250px;
     height: 250px;
     object-fit: contain;
