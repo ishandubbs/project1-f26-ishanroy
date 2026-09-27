@@ -13,6 +13,7 @@ In this project, you'll be creating a frontend that graphically displays Pokémo
   - You can just post it to Youtube or provide a Google Drive link or whatever works.
 - Push all your changes to the remote repository. Make sure that the owner is BoG-Developer-Bootcamp-Fall-26 so that we can see the repository! (if you forgot to do this, you can alternatively message Pattakit on Slack with the link to your repo)
 - **Due Date:** 9/29/26
+- Video Link: "![BoG Project 1 Video](<BoG project 1.gif>)"
 
 ## Requirements
 - Must use HTML, CSS, and JS
@@ -57,9 +58,9 @@ For however many types a Pokémon has, display all of them horizontally. Each ty
 ### Info/Moves Buttons
 <img width="374" alt="Screenshot 2023-09-26 at 5 42 39 PM" src="https://github.com/BoG-Dev-Bootcamp-F23/project1-f23/assets/8647920/061ff1b1-82eb-4af9-9909-eeef3835a578">
 
-The color of the buttons should differ based on whichever one is currently active (i.e. if the info is showing, then the info button should be green, etc.). Clicking each button should change whether the info or moves button is showing. 
+The color of the buttons should differ based on whichever one is currently active (i.e. if the info is showing, then the info button should be green, etc.). Clicking each button should change whether the info or moves button is showing.
 
-The selected setting should remain the same when the user switches between Pokémon using the arrows. 
+The selected setting should remain the same when the user switches between Pokémon using the arrows.
 
 ### Stats Panel
 #### Info
